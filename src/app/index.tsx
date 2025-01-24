@@ -9,7 +9,9 @@ import {
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Feather from "@expo/vector-icons/Feather";
 import { useState } from "react";
+import React from "react";
 
 interface BuysProps {
   id: number;
@@ -20,6 +22,8 @@ interface BuysProps {
 export default function index() {
   const [buys, setBuys] = useState<BuysProps[]>([]);
   const [item, setItem] = useState("");
+  const [editId, setEditId] = useState<number | null>(null);
+  const [editName, setEditName] = useState("");
 
   function saveItem() {
     if (item.trim()) {
@@ -42,6 +46,22 @@ export default function index() {
 
   function clearAll() {
     setBuys([]);
+  }
+
+  function editItem(id: number, name: string) {
+    setEditId(id); 
+    setEditName(name); 
+  }
+
+  function saveEdit() {
+    if (editName.trim()) {
+      const updatedBuys = buys.map((buy) =>
+        buy.id === editId ? { ...buy, name: editName } : buy
+      );
+      setBuys(updatedBuys);
+      setEditId(null); 
+      setEditName(""); 
+    }
   }
 
   return (
@@ -80,11 +100,31 @@ export default function index() {
                   />
                 )}
               </Pressable>
-              <Text style={styles.textItem}>{item.name}</Text>
+              {editId === item.id ? (
+                <TextInput
+                  style={styles.editInput}
+                  placeholder="Novo nome"
+                  value={editName}
+                  onChangeText={setEditName}
+                />
+              ) : (
+                <Text style={styles.textItem}>{item.name}</Text>
+              )}
             </View>
-            <Pressable onPress={() => removeItem(item.id)}>
-              <AntDesign name="delete" size={24} color="#D1D5DB" />
-            </Pressable>
+            <View style={styles.actionButtons}>
+              {editId === item.id ? (
+                <TouchableOpacity onPress={saveEdit}>
+                  <Feather name="check" size={24} color="#D1D5DB" style={{ marginLeft: 5 }}  />
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={() => editItem(item.id, item.name)}>
+                  <Feather name="edit" size={24} color="#D1D5DB" />
+                </TouchableOpacity>
+              )}
+              <Pressable onPress={() => removeItem(item.id)}>
+                <AntDesign name="delete" size={24} color="#D1D5DB" />
+              </Pressable>
+            </View>
           </View>
         ))}
       </View>
@@ -122,6 +162,16 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 20,
     marginBottom: 20,
+  },
+  editInput: {
+    flex: 1,
+    height: 44,
+    borderWidth: 1,
+    borderColor: "#D1D5D8",
+    borderRadius: 12,
+    paddingHorizontal: 20,
+    fontSize: 16,
+    backgroundColor: "#FFFFFF",
   },
   button: {
     width: "100%",
@@ -165,10 +215,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
+    flex: 1,
   },
   textItem: {
     color: "#374151",
     fontSize: 16,
+    flex: 1,
+  },
+  actionButtons: {
+    flexDirection: "row",
+    gap: 10,
   },
   cardContainer: {
     gap: 20,
