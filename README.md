@@ -12,3 +12,5 @@ Tecnologias Utilizadas:
 React Native: Estrutura principal para desenvolvimento do aplicativo.
 Expo: Ambiente de desenvolvimento para facilitar a execução e testes.
 @expo/vector-icons: Ícones elegantes para melhorar a experiência visual.
+
+Link da publicação e exemplo: https://acesse.one/j8Hei
