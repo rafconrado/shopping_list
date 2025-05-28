@@ -2,8 +2,6 @@
 
 Simplifique suas compras da semana com o **Shopping List App**! Desenvolvido em React Native e Expo, este aplicativo oferece uma maneira intuitiva e eficiente de gerenciar todos os itens que você precisa comprar. Nunca mais esqueça um item no supermercado!
 
-**Visite o repositório:** [https://github.com/rafconrado/shopping_list](https://github.com/rafconrado/shopping_list)
-
 ## 🎬 Demonstração
 
 Confira uma demonstração do aplicativo em funcionamento:
