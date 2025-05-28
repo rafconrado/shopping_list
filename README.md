@@ -1,10 +1,5 @@
 # 🛒 Shopping List App - Gerenciador de Compras da Semana
 
-[![GitHub repo stars](https://img.shields.io/github/stars/rafconrado/shopping_list?style=social)](https://github.com/rafconrado/shopping_list/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/rafconrado/shopping_list?style=social)](https://github.com/rafconrado/shopping_list/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/rafconrado/shopping_list)](https://github.com/rafconrado/shopping_list/issues)
-[![License](https://img.shields.io/github/license/rafconrado/shopping_list)](https://github.com/rafconrado/shopping_list/blob/main/LICENSE) *(Adicione um arquivo LICENSE ao seu repositório para este selo funcionar)*
-
 Simplifique suas compras da semana com o **Shopping List App**! Desenvolvido em React Native e Expo, este aplicativo oferece uma maneira intuitiva e eficiente de gerenciar todos os itens que você precisa comprar. Nunca mais esqueça um item no supermercado!
 
 **Visite o repositório:** [https://github.com/rafconrado/shopping_list](https://github.com/rafconrado/shopping_list)
@@ -32,22 +27,6 @@ Confira uma demonstração do aplicativo em funcionamento:
 * **[Expo Font (`expo-font`)](https://docs.expo.dev/versions/latest/sdk/font/)**: Para carregamento e uso de fontes personalizadas.
 * **AsyncStorage**: Para persistência de dados localmente no dispositivo (inferido pela natureza do app, confirme se usou).
 * **CSS-in-JS (StyleSheet API do React Native)**: Para estilização dos componentes.
-
-## 📂 Estrutura do Projeto (Simplificada)
-
-```
-shopping_list/
-├── assets/ મુખ્ય # Fontes, imagens e outros assets estáticos
-│   ├── fonts/
-│   └── icon.png, splash.png, etc.
-├── components/ મુખ્ય # Componentes React Native reutilizáveis (ex: Item, InputArea)
-│   └── ...
-├── App.js મુખ્ય # Ponto de entrada principal e lógica central do aplicativo
-├── app.json મુખ્ય # Configurações do projeto Expo (nome, ícone, splash screen, etc.)
-├── babel.config.js મુખ્ય # Configurações do Babel
-├── package.json મુખ્ય # Dependências e scripts do projeto
-└── README.md
-``` 
 
 ## 🚀 Começando
 
@@ -118,11 +97,3 @@ Contribuições são muito bem-vindas! Se você tem ideias para melhorar o app o
 Rafael Conrado
 * GitHub: [@rafconrado](https://github.com/rafconrado)
 * LinkedIn: [linkedin.com/in/rafconradoo](https://www.linkedin.com/in/rafconradoo/)
-
----
-
-Espero que este README esteja completo e do seu agrado!
-**Recomendações:**
-* **Adicione Screenshots:** Isso realmente ajuda a mostrar como é o seu app. Crie uma pasta `assets/screenshots` (ou similar) e coloque as imagens lá, depois referencie no README.
-* **Adicione um arquivo LICENSE:** Como o MIT License, por exemplo.
-* Confirme se a informação sobre `AsyncStorage` está correta ou qual método de persistência você utilizou, se houver. Se não houver persistência, pode remover essa menção.
